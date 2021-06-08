@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "9527ada3-c853-4e8a-bdcd-03ff5bb29a5b",
+		"name": "FastAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Index",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"pm.test(\"My Schema is valid\",function(){",
+							"const mySchema={",
+							"    \"data\": \"string\"",
+							"}",
+							"pm.response.to.have.jsonSchema(mySchema);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}",
+					"host": [
+						"{{host}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tenant",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"pm.test(\"My Schema is valid\",function(){",
+							"const mySchema={",
+							"    \"data\": \"string\"",
+							"}",
+							"pm.response.to.have.jsonSchema(mySchema);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}tenant/{{tenant_id}}",
+					"host": [
+						"{{host}}tenant"
+					],
+					"path": [
+						"{{tenant_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tenant Details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"pm.test(\"My Schema is valid\",function(){",
+							"const mySchema={",
+							"    \"data\": \"string\"",
+							"}",
+							"pm.response.to.have.jsonSchema(mySchema);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}tenant/{{tenant_id}}/details",
+					"host": [
+						"{{host}}tenant"
+					],
+					"path": [
+						"{{tenant_id}}",
+						"details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"pm.test(\"My Schema is valid\",function(){",
+							"const mySchema={",
+							"    \"contact_id\": \"integer\",",
+							"    \"first_name\": \"string\",",
+							"    \"last_name\": \"string\",",
+							"    \"user_name\": \"string\",",
+							"    \"password\": \"string\"",
+							"}",
+							"pm.response.to.have.jsonSchema(mySchema);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"contact_id\": 0,\n  \"first_name\": \"string\",\n  \"last_name\": \"string\",\n  \"user_name\": \"string\",\n  \"password\": \"string\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}contact",
+					"host": [
+						"{{host}}contact"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
