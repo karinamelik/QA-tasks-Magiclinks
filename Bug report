@@ -1,0 +1,7 @@
+Defect Summary: Get /tenents/{tenant_id} returns Error : Internal Server Error
+Reproduction Steps: Go to http://localhost:8000/docs ,   Invoke the Get /tenant/{}tenent-id} with sample data, view the Rest Api Respone
+Expected Result: 200
+Actual Result: Error: Internal Server Error
+Status: New
+Assigned to : developer
+Reported by: karina
